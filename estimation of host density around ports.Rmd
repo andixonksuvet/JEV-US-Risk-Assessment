@@ -175,12 +175,17 @@ seaport_map <- seaport_map %>%
 ## Feral pigs
 
 Observations of feral pigs and port information were converted to `sf`
-objects. Each feral pig observation was given a buffer of 600 m, which
-corresponds to a core area of 1.09 km^2^ for feral pigs[^8], and
+objects. Each feral pig observation was given a buffer of 600 m[^8],
+which corresponds to a core area of 1.09 km^2^ for feral pigs[^9], and
 determined if it was within 7.7 km of the port location (see
 [Background] for rationale).
 
-[^8]: Gabor, TM, Hellgren, EC, Bussche, RA, Silvy, NJ. (1999)
+[^8]: This buffer was included as pigs are not stationary. However, the
+    removal of this buffer does not change the results of this analysis
+    (results not shown). As the buffer size increases, theoretically,
+    more pigs would be within the 7.7km range of a port.
+
+[^9]: Gabor, TM, Hellgren, EC, Bussche, RA, Silvy, NJ. (1999)
     Demography, sociospatial behaviour and genetics of feral pigs (Sus
     scrofa) ina semi-arid environment. Journal of Zoology 247(3):
     311-322.
@@ -283,12 +288,12 @@ feralPig_counts_sea <- purrr::map_depth(seaports_near_feralPigs, 2,  length) %>%
 As we do not have exact location of pig farms, the density of pig
 livestock in the county of the port of interest will be used as a proxy
 for domestic pig hosts in proximity to the site of introduction. Density
-was calculated from hog production from the NASS 2017 Ag census[^9] and
-the square kilometer of each county based on the tigris package[^10].
+was calculated from hog production from the NASS 2017 Ag census[^10] and
+the square kilometer of each county based on the tigris package[^11].
 
-[^9]: <https://www.nass.usda.gov/Publications/AgCensus/2017/index.php>
+[^10]: <https://www.nass.usda.gov/Publications/AgCensus/2017/index.php>
 
-[^10]: Walker K (2023). *tigris: Load Census TIGER/Line Shapefiles*. R
+[^11]: Walker K (2023). *tigris: Load Census TIGER/Line Shapefiles*. R
     package version 2.0.1, <https://CRAN.R-project.org/package=tigris>.
 
 ### Summarize

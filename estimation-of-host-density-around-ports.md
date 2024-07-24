@@ -1,7 +1,7 @@
 Density of JEV hosts
 ================
 Dr. Andrea Dixon
-2024-03-21
+2024-07-24
 
 # Background
 
@@ -141,10 +141,10 @@ seaport_map <- seaport_map %>%
 ## Feral pigs
 
 Observations of feral pigs and port information were converted to `sf`
-objects. Each feral pig observation was given a buffer of 600 m, which
-corresponds to a core area of 1.09 km<sup>2</sup> for feral pigs[^8],
-and determined if it was within 7.7 km of the port location (see
-[Background](#background) for rationale).
+objects. Each feral pig observation was given a buffer of 600 m[^8],
+which corresponds to a core area of 1.09 km<sup>2</sup> for feral
+pigs[^9], and determined if it was within 7.7 km of the port location
+(see [Background](#background) for rationale).
 
 ### Functions and parameters for section
 
@@ -251,8 +251,8 @@ feralPig_counts_sea <- purrr::map_depth(seaports_near_feralPigs, 2,  length) %>%
 As we do not have exact location of pig farms, the density of pig
 livestock in the county of the port of interest will be used as a proxy
 for domestic pig hosts in proximity to the site of introduction. Density
-was calculated from hog production from the NASS 2017 Ag census[^9] and
-the square kilometer of each county based on the tigris package[^10].
+was calculated from hog production from the NASS 2017 Ag census[^10] and
+the square kilometer of each county based on the tigris package[^11].
 
 ### Summarize
 
@@ -1495,7 +1495,7 @@ RAR7
 sessionInfo()
 ```
 
-    ## R version 4.3.2 (2023-10-31 ucrt)
+    ## R version 4.3.3 (2024-02-29 ucrt)
     ## Platform: x86_64-w64-mingw32/x64 (64-bit)
     ## Running under: Windows 11 x64 (build 22621)
     ## 
@@ -1516,27 +1516,27 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## other attached packages:
-    ##  [1] kableExtra_1.4.0 knitr_1.45       tigris_2.1       raster_3.6-26   
-    ##  [5] sp_2.1-2         sf_1.0-15        lubridate_1.9.3  forcats_1.0.0   
+    ##  [1] kableExtra_1.4.0 knitr_1.46       tigris_2.1       raster_3.6-26   
+    ##  [5] sp_2.1-3         sf_1.0-16        lubridate_1.9.3  forcats_1.0.0   
     ##  [9] stringr_1.5.1    dplyr_1.1.4      purrr_1.0.2      readr_2.1.5     
-    ## [13] tidyr_1.3.1      tibble_3.2.1     ggplot2_3.4.4    tidyverse_2.0.0 
+    ## [13] tidyr_1.3.1      tibble_3.2.1     ggplot2_3.5.0    tidyverse_2.0.0 
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] gtable_0.3.4       xfun_0.41          lattice_0.21-9     tzdb_0.4.0        
-    ##  [5] vctrs_0.6.5        tools_4.3.2        generics_0.1.3     parallel_4.3.2    
+    ##  [1] gtable_0.3.4       xfun_0.43          lattice_0.22-5     tzdb_0.4.0        
+    ##  [5] vctrs_0.6.5        tools_4.3.3        generics_0.1.3     parallel_4.3.3    
     ##  [9] proxy_0.4-27       fansi_1.0.6        highr_0.10         pkgconfig_2.0.3   
-    ## [13] KernSmooth_2.23-22 uuid_1.2-0         lifecycle_1.0.4    compiler_4.3.2    
-    ## [17] munsell_0.5.0      terra_1.7-65       codetools_0.2-19   htmltools_0.5.7   
+    ## [13] KernSmooth_2.23-22 uuid_1.2-0         lifecycle_1.0.4    compiler_4.3.3    
+    ## [17] munsell_0.5.1      terra_1.7-71       codetools_0.2-19   htmltools_0.5.8.1 
     ## [21] class_7.3-22       yaml_2.3.8         crayon_1.5.2       pillar_1.9.0      
-    ## [25] classInt_0.4-10    wk_0.9.1           tidyselect_1.2.0   digest_0.6.34     
-    ## [29] stringi_1.8.3      fastmap_1.1.1      grid_4.3.2         colorspace_2.1-0  
+    ## [25] classInt_0.4-10    wk_0.9.1           tidyselect_1.2.1   digest_0.6.35     
+    ## [29] stringi_1.8.3      fastmap_1.1.1      grid_4.3.3         colorspace_2.1-0  
     ## [33] cli_3.6.2          magrittr_2.0.3     utf8_1.2.4         e1071_1.7-14      
     ## [37] withr_3.0.0        scales_1.3.0       rappdirs_0.3.3     bit64_4.0.5       
-    ## [41] timechange_0.3.0   rmarkdown_2.25     httr_1.4.7         bit_4.0.5         
+    ## [41] timechange_0.3.0   rmarkdown_2.26     httr_1.4.7         bit_4.0.5         
     ## [45] hms_1.1.3          evaluate_0.23      viridisLite_0.4.2  s2_1.1.6          
-    ## [49] rlang_1.1.3        Rcpp_1.0.12        glue_1.7.0         DBI_1.2.1         
-    ## [53] xml2_1.3.6         svglite_2.1.3      rstudioapi_0.15.0  vroom_1.6.5       
-    ## [57] R6_2.5.1           systemfonts_1.0.5  units_0.8-5
+    ## [49] rlang_1.1.3        Rcpp_1.0.12        glue_1.7.0         DBI_1.2.2         
+    ## [53] xml2_1.3.6         svglite_2.1.3      rstudioapi_0.16.0  vroom_1.6.5       
+    ## [57] R6_2.5.1           systemfonts_1.0.6  units_0.8-5
 
 [^1]: Verdonschot, PFM and Besse-Lototskaya, AA (2014) Flight distance
     of mosquitoes (Culicidae): A metadata analysis to support the
@@ -1563,7 +1563,12 @@ sessionInfo()
 [^7]: GBIF.org (12 September 2023) GBIF Occurrence Download
     <https://doi.org/10.15468/dl.g8dmec>
 
-[^8]: Gabor, TM, Hellgren, EC, Bussche, RA, Silvy, NJ. (1999)
+[^8]: This buffer was included as pigs are not stationary. However, the
+    removal of this buffer does not change the results of this analysis
+    (results not shown). As the buffer size increases, theoretically,
+    more pigs would be within the 7.7km range of a port.
+
+[^9]: Gabor, TM, Hellgren, EC, Bussche, RA, Silvy, NJ. (1999)
     Demography, sociospatial behaviour and genetics of feral pigs (Sus
     scrofa) ina semi-arid environment. Journal of Zoology 247(3):
     311-322.
@@ -1573,7 +1578,7 @@ sessionInfo()
     density estimates of feral hog core area sizes of 1.16 (+/- 0.95)
     and 1.51 (+/- 0.96) km<sup>2</sup> for two field sites in Texas.
 
-[^9]: <https://www.nass.usda.gov/Publications/AgCensus/2017/index.php>
+[^10]: <https://www.nass.usda.gov/Publications/AgCensus/2017/index.php>
 
-[^10]: Walker K (2023). *tigris: Load Census TIGER/Line Shapefiles*. R
+[^11]: Walker K (2023). *tigris: Load Census TIGER/Line Shapefiles*. R
     package version 2.0.1, <https://CRAN.R-project.org/package=tigris>.
